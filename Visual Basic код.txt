@@ -1,0 +1,27 @@
+If sch.ItemsSelected.Count = 0 Then
+MsgBox "Вы не выбрали сотрудников !"
+Exit Sub
+End If
+
+Dim s As String, var As Variant
+s = ""
+
+For Each var In sch.ItemsSelected
+s = s + " " + sch.Column(4, var)
+
+Next var
+
+n.Caption = s
+
+
+If g.Value = "Дата" Then
+n.Caption = Date$()
+End If
+
+If g.Value = "Текст" Then
+n.Caption = g.Value
+End If
+
+If g.Value = "Пункт" Then
+n.Caption = 3
+End If
